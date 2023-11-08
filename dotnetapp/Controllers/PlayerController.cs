@@ -8,22 +8,23 @@ namespace dotnetapp.Controllers
 {
     public class PlayerController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext context;
 
-        public PlayerController(ApplicationDbContext context)
+        public PlayerController(ApplicationDbContext _context)
         {
-            _context = context;
+            context = _context;
         }
 
         public IActionResult Edit(int id)
         {
-            var data=context.
-            return View();
+            var data=context.Players.Find(id);
+            return View(data);
         }
 
         [HttpPost]
         public IActionResult Edit(Player p)
         {
+            var data=context.Players.ToList();
             return View();
         }
     }
