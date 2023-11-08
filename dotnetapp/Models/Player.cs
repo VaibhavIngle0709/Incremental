@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace dotnetapp.Models
 {
 
-    //Id = 1, Name = "Player 1", Category = "bowler", BiddingAmount = 100m
+
     public class Player
     {
         public int Id{get;set;}

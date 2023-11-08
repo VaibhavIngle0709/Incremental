@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace dotnetapp.Models
 {
-    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
+    public class ApplicationDbContext : DbContext
     {
         public virtual DbSet<Player> Players{get;set;}
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

@@ -14,6 +14,18 @@ namespace dotnetapp.Controllers
         {
             _context = context;
         }
+
+        public IActionResult Edit(int id)
+        {
+            var data=context.
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Player p)
+        {
+            return View();
+        }
     }
 }
 
