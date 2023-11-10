@@ -15,7 +15,7 @@ namespace dotnetapp.Controllers
             context = _context;
         }
 
-
+        [Route("")]
         public IActionResult Index()
         {
             var data=context.Players.ToList();
@@ -35,19 +35,28 @@ namespace dotnetapp.Controllers
             return View();
         }
        
-        public IActionResult Create(Player p)
+        public IActionResult Create()
         {
             return View();
         }
         [Route("create")]
         [HttpPost]
-        public IActionResult Create()
+        public IActionResult Create(Player p)
         {
+            context.Players.Add(p);
+            context.SaveChanges();
             return View();
         }
 
         public IActionResult Delete(int id)
         {
+            var data=context.Players.Find(id);
+            if(data==null)
+            {
+                return NotFound();
+            }
+            context.Players.Remove(data);
+            context.SaveChanges();
             return View();
         }
 
