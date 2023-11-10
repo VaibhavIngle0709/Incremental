@@ -15,6 +15,13 @@ namespace dotnetapp.Controllers
             context = _context;
         }
 
+
+        public IActionResult Index()
+        {
+            var data=context.Players.ToList();
+            return View (data);
+        }
+
         public IActionResult Edit(int id)
         {
             var data=context.Players.Find(id);
@@ -29,6 +36,11 @@ namespace dotnetapp.Controllers
         }
 
         public IActionResult Create(Player p)
+        {
+            return View();
+        }
+
+        public IActionResult Delete(int id)
         {
             return View();
         }
