@@ -34,7 +34,7 @@ namespace dotnetapp.Controllers
             var data=context.Players.ToList();
             return View();
         }
-
+        [Route("create")]
         public IActionResult Create(Player p)
         {
             return View();
