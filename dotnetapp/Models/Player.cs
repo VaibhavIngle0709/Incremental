@@ -9,7 +9,7 @@ namespace dotnetapp.Models
     {
         public int Id{get;set;}
 
-        [Required]
+        [Required(ErrorMessage="Name is required.")]
         [MaxLength(17)]
         public string Name{get;set;}
         public string Category{get;set;}
