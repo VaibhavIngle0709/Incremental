@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace dotnetapp.Models
 {
     public class ApplicationDbContext : DbContext
     {
         public virtual DbSet<Player> Players{get;set;}
+        public virtual DbSet<Team> Teams{get;set;}
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -16,7 +18,7 @@ namespace dotnetapp.Models
         {
             if(!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("User ID=sa;password=examlyMssql@123; server=localhost;Database=DemoDb;trusted_connection=false;Persist Security Info=False;Encrypt=False");
+                optionsBuilder.UseSqlServer("User ID=sa;password=examlyMssql@123; server=localhost;Database=IPLDb;trusted_connection=false;Persist Security Info=False;Encrypt=False");
             }
         }
 
