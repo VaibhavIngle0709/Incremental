@@ -29,12 +29,13 @@ namespace dotnetapp.Controllers
         }
 
         [HttpPost]
+
         public IActionResult Edit(Player p)
         {
             var data=context.Players.ToList();
             return View();
         }
-       
+        [Route("create")]
         public IActionResult Create()
         {
             return View();
@@ -48,7 +49,19 @@ namespace dotnetapp.Controllers
             return View();
         }
 
+        
         public IActionResult Delete(int id)
+        {
+              var data=context.Players.Find(id);
+            if(data==null)
+            {
+                return NotFound();
+            }
+            return View(data);
+        }
+        
+       
+        public IActionResult DeleteConfirmed(int id)
         {
             var data=context.Players.Find(id);
             if(data==null)
