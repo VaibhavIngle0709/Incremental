@@ -19,6 +19,10 @@ namespace dotnetapp.Controllers
         public IActionResult Index()
         {
             var data=context.Players.ToList();
+            if(data.Count()==0)
+            {
+                return View();
+            }
             return View (data);
         }
 
