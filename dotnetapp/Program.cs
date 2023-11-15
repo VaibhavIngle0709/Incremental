@@ -14,6 +14,7 @@ builder.Services.AddControllersWithViews();
 
 // Add your DbContext and Identity services
 // ...
+builder.Services.AddDbContext<ApplicationDbContext>(o=>o.UseSqlServer("User ID=sa;password=examlyMssql@123; server=localhost;Database=IPLDb;trusted_connection=false;Persist Security Info=False;Encrypt=False;"));
 
 var app = builder.Build();
 

@@ -18,15 +18,12 @@ namespace dotnetapp.Controllers
         [Route("")]
         public IActionResult Index()
         {
-         /*   var data=context.Players.ToList();
+           var data=context.Players.ToList();
             if(data.Count()==0)
             {
                 return View();
             }
-            return View (data);
-            */
-            return View();
-            
+            return View (data);    
         }
 
         public IActionResult Edit(int id)
