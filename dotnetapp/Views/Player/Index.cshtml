@@ -1,3 +1,23 @@
 @model IEnumerable<dotnetapp.Models.Player>
 <p background='res/bg.jpg'>
+
+<table class="table">
+    <thead>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>CATEGORY</th>
+        <th>TEAMID</th>
+        <th>BIDDING AMOUNT</th>
+    </thead>
+    <tbody>
+        @foreach (var data in @Model)
+        {
+            <tr>
+                <td>@data.Id</td>
+            </tr>    
+        }
+        
+    </tbody>
+
+</table>
 </p>
