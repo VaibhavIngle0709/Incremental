@@ -6,13 +6,14 @@ namespace dotnetapp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDbContext _context)
         {
-            _logger = logger;
+            context = _context;
         }
 
+        [Route("Index")]
         public IActionResult Index()
         {
             return View();
