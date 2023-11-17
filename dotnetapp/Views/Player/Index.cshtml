@@ -1,23 +1,35 @@
 @model IEnumerable<dotnetapp.Models.Player>
 <p background='res/bg.jpg'>
 
-<table class="table">
+<div style="">
+<table class="table" style="text-align: center;background-color:black;">
     <thead>
-        <th>ID</th>
+        <th text-color="white">ID</th>
         <th>NAME</th>
         <th>CATEGORY</th>
         <th>TEAMID</th>
         <th>BIDDING AMOUNT</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+        <th>VIEW</th>
     </thead>
-    <tbody>
+    <tbody >
         @foreach (var data in @Model)
         {
             <tr>
                 <td>@data.Id</td>
+                <td>@data.Name</td>
+                <td>@data.Category</td>
+                <td>@data.TeamId</td>
+                <td>@data.BiddingAmount</td>
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <td><a href="#">View</a></td>
             </tr>    
         }
         
     </tbody>
 
 </table>
+</div>
 </p>
