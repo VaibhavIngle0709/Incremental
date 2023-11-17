@@ -8,12 +8,12 @@ using Microsoft.Extensions.Logging;
 
 namespace dotnetapp.Controllers
 {
-     [Route("[controller]")]
+
     public class NewHomeController : Controller
     {
       
-        [Route("Index")]
-        public IActionResult Index()
+        //[Route("")]
+        public IActionResult IndexHome()
         {
             return View();
         }
