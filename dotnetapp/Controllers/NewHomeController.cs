@@ -11,7 +11,7 @@ namespace dotnetapp.Controllers
     public class NewHomeController : Controller
     {
       
-        [Route("")]
+        [Route("Home")]
         public IActionResult HomeIndex()
         {
             return View();

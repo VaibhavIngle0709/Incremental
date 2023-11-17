@@ -33,18 +33,10 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-/*app.MapControllerRoute(
+app.MapControllerRoute(
     name: "default",
 
-    pattern: "{controller=NewHome}/{action=IndexHome}");
-    */
-app.UseEndpoints(endpoints=>
-{
- endpoints.MapControllerRoute(
-    name:"default",
-    pattern:"{controller=NewHome}/{action=HomeIndex}"
- );
-});
-
+    pattern: "{controller=NewHome}/{action=HomeIndex}/{id?}");
+    
 app.Run();
 

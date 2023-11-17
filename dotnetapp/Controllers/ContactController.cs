@@ -17,7 +17,7 @@ namespace dotnetapp.Controllers
         {
             _logger = logger;
         }
-        [Route("ContactIndex")]
+        [Route("")]
         public IActionResult ContactIndex()
         {
             return View();
