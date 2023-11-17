@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace dotnetapp.Controllers
 {
- 
+  
     public class TeamController : Controller
     {
         private readonly ILogger<TeamController> _logger;
@@ -17,16 +17,12 @@ namespace dotnetapp.Controllers
         {
             _logger = logger;
         }
-
+        [Route("TeamIndex")]
         public IActionResult TeamIndex()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View("Error!");
-        }
+      
     }
 }

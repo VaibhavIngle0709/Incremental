@@ -42,7 +42,7 @@ app.UseEndpoints(endpoints=>
 {
  endpoints.MapControllerRoute(
     name:"default",
-    pattern:"{controller=NewHome}/{action=IndexHome}"
+    pattern:"{controller=NewHome}/{action=HomeIndex}"
  );
 });
 

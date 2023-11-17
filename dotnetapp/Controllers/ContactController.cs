@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace dotnetapp.Controllers
 {
-    [Route("[controller]")]
+   
     public class ContactController : Controller
     {
         private readonly ILogger<ContactController> _logger;
@@ -17,8 +17,8 @@ namespace dotnetapp.Controllers
         {
             _logger = logger;
         }
-
-        public IActionResult Index()
+        [Route("ContactIndex")]
+        public IActionResult ContactIndex()
         {
             return View();
         }
