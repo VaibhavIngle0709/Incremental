@@ -4,6 +4,7 @@ using dotnetapp.Models;
 
 namespace dotnetapp.Controllers
 {
+    
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext context;
