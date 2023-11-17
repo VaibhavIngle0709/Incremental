@@ -15,7 +15,7 @@ namespace dotnetapp.Controllers
             context = _context;
         }
 
-        // [Route("")]
+         [Route("ListPlayer")]
         public IActionResult Index()
         {
            var data=context.Players.ToList();
