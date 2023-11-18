@@ -46,7 +46,7 @@ namespace dotnetapp.Controllers
 
         public IActionResult Edit(Player p)
         {
-            var data=context.Players.ToList();
+            var data=context.Players.Find()
             return View();
         }
         [Route("create")]
@@ -60,7 +60,7 @@ namespace dotnetapp.Controllers
         {
             context.Players.Add(p);
             context.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
 
         
