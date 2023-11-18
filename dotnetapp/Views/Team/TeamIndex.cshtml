@@ -19,8 +19,8 @@
     <thead>
         <th>TEAM ID</th>
         <th style="text-align: center;">TEAM NAME</th>
-        <th style="text-align: center;">PLAYERS DETAIL</th>
-        <th style="text-align: center;">TEAM DETAILS</th>
+        <th style="text-align: center;">PLAYER'S DETAIL</th>
+       
     </thead>
     <tbody >
         @foreach (var data in @Model)
@@ -29,7 +29,7 @@
                 <td>@data.TeamId</td>
                 <td style="text-align: center;">@data.TeamName</td>
                 <td style="text-align: center;">@Html.ActionLink("View","ViewPlayers",new{id=@data.TeamId})</td>
-                <td style="text-align: center;"><a href="#">View</a></td>
+               
             </tr>    
         }
         

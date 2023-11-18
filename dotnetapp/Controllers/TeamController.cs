@@ -40,25 +40,26 @@ namespace dotnetapp.Controllers
         public IActionResult ViewPlayers(int id)
         {
             var data=context.Players.ToList();
-            List<Player> p=new List<Player>();
-
-            List<Team> t=new List<Team>();
+            List<Player> pe=new List<Player>();
+            
+            var data2=context.Teams.Find(id);
+            string teamName=data2.TeamName;
             
 
             for(int i=0;i< data.Count;i++)
             {
                 if(data[i].TeamId==id)
                 {
-                    p.Add(data[i]);
+                    pe.Add(data[i]);
                 }
             }
-            YourViewModel viewModel=new YourViewModel
+            ViewModel viewModel=new ViewModel
             {
-                PlayersList=p,
-
+                p=pe,
+                TeamName=teamName
 
             };
-            return View(p);
+            return View(viewModel);
         }
 
       
