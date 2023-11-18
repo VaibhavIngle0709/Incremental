@@ -25,6 +25,18 @@ namespace dotnetapp.Controllers
             return View(data);
         }
 
+        public IActionResult CreateTeam()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreateTeam(Team t)
+        {
+            context.Teams.Add(t);
+            context.SaveChanges();
+            return RedirectToAction("TeamIndex");
+        }
+
       
     }
 }
