@@ -1,0 +1,47 @@
+@using dotnetapp.Models
+@model List<Player>
+<p background='res/bg.jpg'>
+<style>
+    th
+    {
+        color:white;
+    }
+    td
+    {
+      color:white;  
+    }
+</style>
+
+
+<div style="width:100% ;background-color:red ;text-align:center; padding:10px;">
+    <h4 style="color:white;">PLAYERS OF TEAM @Model.TeamName.ToUpper()</h3>
+</div>
+<div style="width:100%">
+
+<table class="table" style="text-align: start;background-color:#333;">
+    <thead>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>CATEGORY</th>
+        <th>BIDDING AMOUNT</th>
+    </thead>
+    <tbody >
+        @foreach (var data in @Model)
+        {
+            <tr>
+                <td>@data.Id</td>
+                <td>@data.Name</td>
+                <td>@data.Category</td>
+                <td>@data.BiddingAmount</td>
+            </tr>    
+        }
+        
+    </tbody>
+
+</table>
+</div>
+
+
+
+
+</p>

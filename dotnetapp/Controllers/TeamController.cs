@@ -37,6 +37,30 @@ namespace dotnetapp.Controllers
             return RedirectToAction("TeamIndex");
         }
 
+        public IActionResult ViewPlayers(int id)
+        {
+            var data=context.Players.ToList();
+            List<Player> p=new List<Player>();
+
+            List<Team> t=new List<Team>();
+            
+
+            for(int i=0;i< data.Count;i++)
+            {
+                if(data[i].TeamId==id)
+                {
+                    p.Add(data[i]);
+                }
+            }
+            YourViewModel viewModel=new YourViewModel
+            {
+                PlayersList=p,
+
+
+            };
+            return View(p);
+        }
+
       
     }
 }
