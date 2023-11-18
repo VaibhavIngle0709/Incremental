@@ -1,10 +1,23 @@
 @model IEnumerable<dotnetapp.Models.Player>
 <p background='res/bg.jpg'>
+<style>
+    th
+    {
+        color:white;
+    }
+    td
+    {
+      color:white;  
+    }
+</style>
 
-<div style="">
-<table class="table" style="text-align: center;background-color:black;">
+<div style="width:100% ;background-color:red ;text-align:center; padding:10px;">
+    <h4 style="color:white;">LIST OF PLAYERS</h3>
+</div>
+<div style="width:100%">
+<table class="table" style="text-align: start;background-color:#333;">
     <thead>
-        <th text-color="white">ID</th>
+        <th>ID</th>
         <th>NAME</th>
         <th>CATEGORY</th>
         <th>TEAMID</th>
@@ -32,4 +45,6 @@
 
 </table>
 </div>
+
+
 </p>

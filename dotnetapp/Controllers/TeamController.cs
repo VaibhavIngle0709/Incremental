@@ -5,22 +5,24 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using dotnetapp.Models;
 
 namespace dotnetapp.Controllers
 {
   
     public class TeamController : Controller
     {
-        private readonly ILogger<TeamController> _logger;
+        private readonly ApplicationDbContext context;
 
-        public TeamController(ILogger<TeamController> logger)
+        public TeamController(ApplicationDbContext _context)
         {
-            _logger = logger;
+            context=_context;
         }
         [Route("TeamIndex")]
         public IActionResult TeamIndex()
         {
-            return View();
+            var data=context.Teams.ToList();
+            return View(data);
         }
 
       
