@@ -1,7 +1,14 @@
 @model dotnetapp.Models.Player
+ @Html.ActionLink("Back To List","Index")
+
+
+
+
+
+
+
 <h2>Details of @Model.Name</h2>
 <p>@Html.DisplayNameFor(m=>m.Category) &nbsp;&nbsp;&nbsp;@Html.DisplayFor(m=>m.Category)</p>
 <p>@Html.DisplayNameFor(m=>m.TeamId) &nbsp;&nbsp;&nbsp;@Html.DisplayFor(m=>m.TeamId)</p>
 <p>@Html.DisplayNameFor(m=>m.BiddingAmount) &nbsp;&nbsp;&nbsp;@Html.DisplayFor(m=>m.BiddingAmount)</p>
-<hr>
-    @Html.ActionLink("Back To List","List")
+   
