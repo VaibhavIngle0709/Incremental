@@ -8,23 +8,13 @@
     @using (Html.BeginForm())
 {
     <form class="form-group">
+      
         <div>
-            <label for="Name" style="color:white;font-size:18px; font-style:bold; text-align:center;margin:3px;">PLAYER NAME</label>
-            <input type="text" name="Name" class="form-control" id="Name" style="margin: 15px;">
+            <label for="TeamName" style="color:white;font-size:18px; font-style:bold; text-align:center;margin:3px;">TEAM NAME</label>
+            <input type="text" name="TeamName" class="form-control" id="TeamName" style="margin: 15px;">
         </div>
-        <div>
-            <label for="Category" style="color:white;font-size:18px; font-style:bold; text-align:center;margin:3px;">PLAYER CATEGORY</label>
-            <input type="text" name="Category" class="form-control" id="Category" style="margin: 15px;">
-        </div>
-        <div>
-            <label for="TeamId" style="color:white;font-size:18px; font-style:bold; text-align:center;margin:3px;">PLAYER TEAM ID</label>
-            <input type="text" name="TeamId" class="form-control" id="TeamId" style="margin: 15px;">
-        </div>
-        <div>
-            <label for="BiddingAmount" style="color:white;font-size:18px; font-style:bold; text-align:center;margin:3px;">PLAYER BIDDING AMOUNT</label>
-            <input type="text" name="BiddingAmount" class="form-control" id="BiddingAmount" style="margin: 15px;">
-        </div>
-        <input type="submit" class="form-control" value="ADD PLAYER" style="color:white;background-color:#000; padding:7px; font-size:15px">
+     
+        <input type="submit" class="form-control" value="CREATE TEAM" style="color:white;background-color:#000; padding:7px; font-size:15px">
 
     </form>
 }

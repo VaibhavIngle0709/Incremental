@@ -19,8 +19,7 @@
     <thead>
         <th>TEAM ID</th>
         <th>TEAM NAME</th>
-        <th>EDIT</th>
-        <th>DELETE</th>
+        <th>PLAYERS</th>
         <th>VIEW</th>
     </thead>
     <tbody >
@@ -29,8 +28,7 @@
             <tr>
                 <td>@data.TeamId</td>
                 <td>@data.TeamName</td>
-                <td><a href="#">Edit</a></td>
-                <td><a href="#">Delete</a></td>
+                <td><a href="#">View</a></td>
                 <td><a href="#">View</a></td>
             </tr>    
         }
@@ -51,7 +49,7 @@
     <br>
     <br>
 `
-    <a href='@Url.Action("Create", "Player")'> <input type="submit"  value="GET STARTED" style="color:white;background-color:#000; padding:7px; font-size:15px"></a>
+    <a href='@Url.Action("CreateTeam", "Team")'> <input type="submit"  value="GET STARTED" style="color:white;background-color:#000; padding:7px; font-size:15px"></a>
 
 </div>
 </div>
