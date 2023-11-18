@@ -1,3 +1,4 @@
+@using dotnetapp.Models
 @model IEnumerable<dotnetapp.Models.Player>
 <p background='res/bg.jpg'>
 <style>
@@ -11,10 +12,12 @@
     }
 </style>
 
+
 <div style="width:100% ;background-color:red ;text-align:center; padding:10px;">
     <h4 style="color:white;">LIST OF PLAYERS</h3>
 </div>
 <div style="width:100%">
+
 <table class="table" style="text-align: start;background-color:#333;">
     <thead>
         <th>ID</th>
@@ -36,7 +39,7 @@
                 <td>@data.TeamId</td>
                 <td>@data.BiddingAmount</td>
                 <td>@Html.ActionLink("Edit","Edit",new{id=@data.Id})</td>
-                <td>@Html.ActionLink("Delete","Delete",new{id=@data.Id})</td>
+                <td><a href="#" onclick="confirmDelete(@data.Id);" >Delete</a></td>
                 <td>@Html.ActionLink("View","Display",new{id=@data.Id})</td>
             </tr>    
         }
@@ -45,7 +48,15 @@
 
 </table>
 </div>
-
+<script>
+    function confirmDelete(var temp)
+    {
+        if(confirm("Are You Sure You Want To Delete This Record?"))
+        {
+            window.location.href='@Url.Action("DeleteConfirm","Player",new{id=temp})';
+        }
+    }
+</script>
 <div style="width:100% ;text-align:end;">
 <div style="width:50% ;background-color:darkblue ;text-align:center; padding:10px;">
     <h5 style="color:white;">ADD PLAYER</h5>
