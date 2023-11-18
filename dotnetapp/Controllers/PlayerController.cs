@@ -15,30 +15,30 @@ namespace dotnetapp.Controllers
             context = _context;
         }
 
-         [Route("ListPlayer")]
+        [Route("ListPlayer")]
         public IActionResult Index()
         {
-           var data=context.Players.ToList();
+            var data = context.Players.ToList();
             // if(data.Count()==0)
             // {
             //     return View(data);
             // }
-            return View (data);    
+            return View(data);
         }
 
         public IActionResult Display(int id)
         {
-           var data=context.Players.Find(id);
-           if(data==null)
-           {
-                return NotFound("NO DATA FOUND WITH ID "+id);
-           }
-           return View(data); 
+            var data = context.Players.Find(id);
+            if (data == null)
+            {
+                return NotFound("NO DATA FOUND WITH ID " + id);
+            }
+            return View(data);
         }
 
         public IActionResult Edit(int id)
         {
-            var data=context.Players.Find(id);
+            var data = context.Players.Find(id);
             return View(data);
         }
 
@@ -46,7 +46,16 @@ namespace dotnetapp.Controllers
 
         public IActionResult Edit(Player p)
         {
-            var data=context.Players.Find()
+            if (ModelState.IsValid)
+            {
+                Player player = context.Players.Find(p.Id);
+                player.Name = p.Name;
+                player.Category = p.Category;
+                player.TeamId = p.TeamId;
+                player.BiddingAmount=p.BiddingAmount;
+                context.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return View();
         }
         [Route("create")]
@@ -63,22 +72,22 @@ namespace dotnetapp.Controllers
             return RedirectToAction("Index");
         }
 
-        
+
         public IActionResult Delete(int id)
         {
-              var data=context.Players.Find(id);
-            if(data==null)
+            var data = context.Players.Find(id);
+            if (data == null)
             {
                 return NotFound();
             }
             return View(data);
         }
-        
-       
+
+
         public IActionResult DeleteConfirmed(int id)
         {
-            var data=context.Players.Find(id);
-            if(data==null)
+            var data = context.Players.Find(id);
+            if (data == null)
             {
                 return NotFound();
             }
