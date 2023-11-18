@@ -2,32 +2,32 @@
 @addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelper
 
 <h2>EDITING  RECORD OF PLAYER</h2>
-<form method='post'>
+<form method='post' class="form-group">
     <label asp-for="Id"></label>
-    <input type='text' asp-for="Id" readonly>
+    <input type='text' asp-for="Id"  class="form-control" readonly>
     <br>
     <label asp-for="Name"></label>
-    <input type='text' asp-for="Name">
+    <input type='text' asp-for="Name" class="form-control">
     <span asp-validation-for="Name" style="color:red"></span>
     <br>
     
 <label asp-for="Category"></label>
-    <input type='text' asp-for="Category">
+    <input type='text' asp-for="Category" class="form-control">
     <span asp-validation-for="Category" style="color:red"></span>
     <br>
     
    <label asp-for="TeamId"></label>
-    <input type='text' asp-for="TeamId">
+    <input type='text' asp-for="TeamId" class="form-control">
     <span asp-validation-for="TeamId" style="color:red"></span>
     <br>
-    
+
     <label asp-for="BiddingAmount"></label>
-    <input type='text' asp-for="BiddingAmount">
+    <input type='text' asp-for="BiddingAmount" class="form-control">
     <span asp-validation-for="BiddingAmount" style="color:red"></span>
     <br>
 
   
 
-    <input type='submit' value='save' style="background-color: cyan;">
+    <input type='submit' value='save' style="background-color: cyan;" class="form-control">
     
 </form>
