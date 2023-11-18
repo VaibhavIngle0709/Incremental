@@ -28,7 +28,7 @@ namespace dotnetapp.Controllers
 
         public IActionResult Display(int id)
         {
-           var data=context.Player.ToList();
+           var data=context.Players.ToList();
            if(data==null)
            {
                 return NotFound("NO DATA FOUND WITH ID "+id);
