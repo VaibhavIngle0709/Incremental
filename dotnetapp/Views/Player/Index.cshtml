@@ -36,7 +36,7 @@
                 <td>@data.TeamId</td>
                 <td>@data.BiddingAmount</td>
                 <td>@Html.ActionLink("Edit","Edit",new{id=@data.Id})</td>
-                <td><a href="#">Delete</a></td>
+                <td>@Html.ActionLink("Delete","Delete",new{id=@data.Id})</td>
                 <td>@Html.ActionLink("View","Display",new{id=@data.Id})</td>
             </tr>    
         }

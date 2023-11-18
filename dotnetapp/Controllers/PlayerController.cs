@@ -73,15 +73,6 @@ namespace dotnetapp.Controllers
         }
 
 
-        public IActionResult Delete(int id)
-        {
-            var data = context.Players.Find(id);
-            if (data == null)
-            {
-                return NotFound();
-            }
-            return View(data);
-        }
 
 
         public IActionResult DeleteConfirmed(int id)
@@ -89,7 +80,7 @@ namespace dotnetapp.Controllers
             var data = context.Players.Find(id);
             if (data == null)
             {
-                return NotFound();
+                return NotFound("Not Found");
             }
             context.Players.Remove(data);
             context.SaveChanges();

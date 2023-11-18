@@ -1,33 +1,40 @@
 @model dotnetapp.Models.Player
 @addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelper
 
-<h2>EDITING  RECORD OF PLAYER</h2>
+<div style="width:100% ; padding:40px ; backgroud-color:grey;">
+<div style="width:100% ;background-color:darkblue ;text-align:center; padding:25px;">
+    <h4 style="color:white;">EDITING PLAYER RECORD</h4>
+</div>
+<div style="width:100%; background-color:#333; text-align:left; padding:40px">
 <form method='post' class="form-group">
-    <label asp-for="Id"></label>
+
+    <label asp-for="Id" style="color:white;font-size:18px; font-style:bold; text-align:center;margin:3px;">ID</label>
     <input type='text' asp-for="Id"  class="form-control" readonly>
     <br>
-    <label asp-for="Name"></label>
+    <label asp-for="Name" style="color:white;font-size:18px; font-style:bold; text-align:center;margin:3px;">NAME</label>
     <input type='text' asp-for="Name" class="form-control">
     <span asp-validation-for="Name" style="color:red"></span>
     <br>
     
-<label asp-for="Category"></label>
+    <label asp-for="Category" style="color:white;font-size:18px; font-style:bold; text-align:center;margin:3px;">CATEGORY</label>
     <input type='text' asp-for="Category" class="form-control">
     <span asp-validation-for="Category" style="color:red"></span>
     <br>
     
-   <label asp-for="TeamId"></label>
+   <label asp-for="TeamId"style="color:white;font-size:18px; font-style:bold; text-align:center;margin:3px;"></label>
     <input type='text' asp-for="TeamId" class="form-control">
     <span asp-validation-for="TeamId" style="color:red"></span>
     <br>
 
-    <label asp-for="BiddingAmount"></label>
+    <label asp-for="BiddingAmount" style="color:white;font-size:18px; font-style:bold; text-align:center;margin:3px;"></label>
     <input type='text' asp-for="BiddingAmount" class="form-control">
     <span asp-validation-for="BiddingAmount" style="color:red"></span>
     <br>
 
   
 
-    <input type='submit' value='save' style="background-color: cyan;" class="form-control">
+    <input type='submit' value='SAVE CHANGES' style="background-color: black; color:white;" class="form-control">
     
 </form>
+</div>
+</div>
