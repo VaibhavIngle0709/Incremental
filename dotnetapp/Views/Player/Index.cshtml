@@ -49,11 +49,15 @@
 </table>
 </div>
 <script>
-    function confirmDelete(var temp)
+    function confirmDelete(ide)
     {
         if(confirm("Are You Sure You Want To Delete This Record?"))
         {
-            window.location.href='@Url.Action("DeleteConfirm","Player",new{id=temp})';
+            $.ajax({
+                type:'POST',
+                url:'@Url.Action("DeleteConfirmed","Player")',
+                data:{id:ide}
+            })
         }
     }
 </script>

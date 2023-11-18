@@ -74,7 +74,7 @@ namespace dotnetapp.Controllers
 
 
 
-
+        [HttpPost]
         public IActionResult DeleteConfirmed(int id)
         {
             var data = context.Players.Find(id);
@@ -84,7 +84,7 @@ namespace dotnetapp.Controllers
             }
             context.Players.Remove(data);
             context.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
 
     }
